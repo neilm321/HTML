@@ -29,6 +29,13 @@
     
     function showkey(e){
       
-      if(e.keyCode === 89 
+      if(e.keyCode === 89 || e.keyCode === 121)
+      {
+        alert('Y pressed. Thank You.')
+      }
+      
+      document.onkeydown = showkey
+      
+  </script>
 </body>
 </html>
