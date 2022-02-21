@@ -1,1 +1,43 @@
+<!DOCTYPE HTML>
 
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh"
+        content="5; url='https://ineasysteps.com'">
+<title>Get Started in HTML</title>
+</head>
+<body>
+<audio id="snd">
+  <source src="audio.mp3" type="audio/mpeg">
+  <source src="audio.ogg" type="audio/ogg">
+  [Fallback Message]
+  
+</audio>
+  <img id="ctl" src="progress-button.png"
+       width="32" height="32" alt="Control">
+  <progress id="bar" value="0"></progress>
+  <span id="num">[Audio]</span>
+
+<script>
+  (function(){
+    const snd = document.getElementById('snd')
+    const ctl = document.getElementById('ctl')
+    const bar = document.getElementById('bar')
+    const num = document.getElementById('num')
+    let run = true
+    
+    ctl.onclick = function(){
+      (run) ? snd.play():snd.pause()
+      run =!run}
+    
+    snd.ontimeupdate = function(){
+      bar.value = (snd.currentTime / snd.durtation)
+      num.innerHTML =Math.floor(100*bar.value) + '%'}
+    
+    })()
+  </script>
+</body>
+</html>
