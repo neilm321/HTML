@@ -1,1 +1,44 @@
+<!DOCTYPE HTML>
 
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh"
+        content="5; url='https://ineasysteps.com'">
+<title>Get Started in HTML</title>
+</head>
+<body>
+<p id="hotel" style="cursor:pointer"
+   onclick="addStar(this)">Hotel Mistrale</p>
+  
+<p id="clear" style="cursor:pointer"
+   onclick="removeStars()">Clear</p>
+  
+<template>
+  
+  <img src="star.png" alt="Gold Star">
+  
+</template>
+  
+<script>
+  
+  function addStar(hotel){
+    const temp = document.getElementById('star')
+    const ciopy =temp.content.cloneNode(true)
+    hotel.appendChild(copy)
+  }
+  
+  function removeStars(){
+    const hotel = document.getElementById('hotel')
+    while(hotel.ChildElementCount>0)
+    {
+      hotel.removeChild(hotel.lastChild)
+    }
+  }
+</script>
+  
+
+</body>
+</html>
